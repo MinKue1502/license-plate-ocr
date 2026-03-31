@@ -1,4 +1,4 @@
-\# 🚗 License Plate OCR - Nhận diện Biển số Xe
+\#  License Plate OCR - Nhận diện Biển số Xe
 
 
 
@@ -6,27 +6,27 @@ Hệ thống phát hiện và nhận diện biển số xe sử dụng \*\*YOLO\
 
 
 
-\## 🎯 Tính năng
+\##  Tính năng
 
 
 
-\- ✅ Phát hiện biển số bằng \*\*YOLOv8\*\*
+\-  Phát hiện biển số bằng \*\*YOLOv8\*\*
 
-\- ✅ Nhận diện text bằng \*\*EasyOCR\*\* + \*\*Tesseract\*\*
+\-  Nhận diện text bằng \*\*EasyOCR\*\* + \*\*Tesseract\*\*
 
-\- ✅ Tiền xử lý ảnh tự động (grayscale, histogram, sharpening, threshold)
+\-  Tiền xử lý ảnh tự động (grayscale, histogram, sharpening, threshold)
 
-\- ✅ Kiểm tra định dạng biển số Việt Nam
+\-  Kiểm tra định dạng biển số Việt Nam
 
-\- ✅ Giao diện web bằng \*\*Streamlit\*\*
+\-  Giao diện web bằng \*\*Streamlit\*\*
 
-\- ✅ Hệ thống logging tự động
+\-  Hệ thống logging tự động
 
-\- ✅ Xử lý lỗi toàn diện
+\-  Xử lý lỗi toàn diện
 
 
 
-\## 📋 Yêu cầu Hệ thống
+\##  Yêu cầu Hệ thống
 
 
 
@@ -40,7 +40,7 @@ Hệ thống phát hiện và nhận diện biển số xe sử dụng \*\*YOLO\
 
 
 
-\## 📦 Cài đặt
+\##  Cài đặt
 
 
 
