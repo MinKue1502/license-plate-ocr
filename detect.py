@@ -25,31 +25,31 @@ def detect_license_plates(image_path, model_path=None):
         
         # Kiểm tra ảnh tồn tại
         if not Path(image_path).exists():
-            log_error(f"❌ Không tìm thấy ảnh: {image_path}")
+            log_error(f" Không tìm thấy ảnh: {image_path}")
             return {"success": False, "error": "Ảnh không tồn tại"}
         
-        log_info(f"📷 Đang tải ảnh: {image_path}")
+        log_info(f" Đang tải ảnh: {image_path}")
         img = cv2.imread(str(image_path))
         
         if img is None:
-            log_error(f"❌ Không thể đọc ảnh: {image_path}")
+            log_error(f" Không thể đọc ảnh: {image_path}")
             return {"success": False, "error": "Không thể đọc ảnh"}
         
         h, w = img.shape[:2]
-        log_info(f"✅ Ảnh tải thành công. Size: {w}x{h}")
+        log_info(f" Ảnh tải thành công. Size: {w}x{h}")
         
         # Kiểm tra model tồn tại
         if not Path(model_path).exists():
-            log_error(f"❌ Không tìm thấy model: {model_path}")
+            log_error(f" Không tìm thấy model: {model_path}")
             return {"success": False, "error": "Model không tồn tại"}
         
         # Load YOLO model
-        log_info(f"🤖 Đang tải model: {model_path}")
+        log_info(f" Đang tải model: {model_path}")
         model = YOLO(str(model_path))
-        log_info("✅ Model tải thành công")
+        log_info(" Model tải thành công")
         
         # Phát hiện
-        log_info("🔍 Đang phát hiện biển số...")
+        log_info(" Đang phát hiện biển số...")
         results = model(img, conf=YOLO_CONFIDENCE)
         
         plates_data = []
@@ -57,7 +57,7 @@ def detect_license_plates(image_path, model_path=None):
         
         for r in results:
             if len(r.boxes) == 0:
-                log_info("⚠️ Không phát hiện biển số nào")
+                log_info(" Không phát hiện biển số nào")
                 continue
             
             for idx, box in enumerate(r.boxes.xyxy):
@@ -83,7 +83,7 @@ def detect_license_plates(image_path, model_path=None):
                     "preprocessed": thresh
                 })
         
-        log_info(f"✅ Phát hiện xong. Tìm thấy {len(plates_data)} biển số")
+        log_info(f" Phát hiện xong. Tìm thấy {len(plates_data)} biển số")
         
         return {
             "success": True,
@@ -100,31 +100,31 @@ def detect_license_plates(image_path, model_path=None):
 def main():
     """Script test"""
     print("=" * 50)
-    print("🚗 License Plate Detection")
+    print(" License Plate Detection")
     print("=" * 50)
     
     # Nhập đường dẫn ảnh
-    image_path = input("\n📷 Nhập đường dẫn ảnh (ví dụ: test.jpg): ").strip()
+    image_path = input("\n Nhập đường dẫn ảnh (ví dụ: test.jpg): ").strip()
     
     if not image_path:
-        print("❌ Vui lòng nhập đường dẫn ảnh")
+        print(" Vui lòng nhập đường dẫn ảnh")
         return
     
     # Phát hiện
     result = detect_license_plates(image_path)
     
     if not result["success"]:
-        print(f"❌ Lỗi: {result['error']}")
+        print(f" Lỗi: {result['error']}")
         return
     
     # Hiển thị kết quả
-    print(f"\n✅ Phát hiện xong!")
-    print(f"📊 Tìm thấy {result['count']} biển số\n")
+    print(f"\n Phát hiện xong!")
+    print(f" Tìm thấy {result['count']} biển số\n")
     
     # Hiển thị ảnh
     img_draw = result["image_draw"]
     cv2.imshow("Detection Result", img_draw)
-    print("💡 Nhấn phím bất kỳ để đóng cửa sổ...")
+    print(" Nhấn phím bất kỳ để đóng cửa sổ...")
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 

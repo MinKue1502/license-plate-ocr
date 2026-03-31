@@ -8,7 +8,7 @@ load_dotenv()
 # ===== PATHS =====
 BASE_DIR = Path(__file__).resolve().parent
 DATASET_PATH = BASE_DIR / "dataset" / "data.yaml"
-MODEL_PATH = BASE_DIR / "runs" / "detect" / "plate_model" / "weights" / "best.pt"
+MODEL_PATH = BASE_DIR / "runs" / "detect" / "plate_model4" / "weights" / "best.pt"
 YOLO_MODEL_NAME = os.getenv("YOLO_MODEL_NAME", "yolov8s.pt")
 
 # ===== TESSERACT =====
@@ -37,7 +37,7 @@ OCR_LANGUAGES = ["en", "vi"]  # Support English and Vietnamese
 YOLO_CONFIDENCE = float(os.getenv("YOLO_CONFIDENCE", 0.3))
 
 # ===== STREAMLIT SETTINGS =====
-PAGE_TITLE = "🚗 Nhận diện Biển số Xe (YOLO + OCR)"
+PAGE_TITLE = " Nhận diện Biển số Xe (YOLO + OCR)"
 PAGE_LAYOUT = "wide"
 
 # ===== TRAINING SETTINGS =====

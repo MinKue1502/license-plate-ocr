@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../val/images
+test: ../test/images
+
+nc: 2
+names: ['long-license-plates', 'short-license-plates']
+
+roboflow:
+  workspace: o23ps6a
+  project: license_plates_vietnam
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/o23ps6a/license_plates_vietnam/dataset/3
